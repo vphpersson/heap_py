@@ -61,10 +61,10 @@ def _default_push_element(heap_sequence: MutableSequence[Any], element: Any) -> 
 
 
 def _default_compare(
-        heap_sequence: MutableSequence[Any],
-        left_hand_side_index: int,
-        right_hand_side_index: int,
-        get_value: Callable[[MutableSequence[Any], int], Any] = _default_get_value
+    heap_sequence: MutableSequence[Any],
+    left_hand_side_index: int,
+    right_hand_side_index: int,
+    get_value: Callable[[MutableSequence[Any], int], Any] = _default_get_value
 ) -> bool:
     """
     Compare two elements in a heap sequence.
@@ -82,11 +82,11 @@ def _default_compare(
 
 
 def _heapify_down(
-        heap_sequence: MutableSequence[Any],
-        node_index: int,
-        get_value: Callable[[MutableSequence[Any], int], Any] = _default_get_value,
-        compare: Callable[[MutableSequence[Any], Any, Any, Callable[[MutableSequence[Any], int], Any]], bool] = _default_compare,
-        swap_elements: Callable[[MutableSequence[Any], int, int], None] = _default_swap_elements
+    heap_sequence: MutableSequence[Any],
+    node_index: int,
+    get_value: Callable[[MutableSequence[Any], int], Any] = _default_get_value,
+    compare: Callable[[MutableSequence[Any], Any, Any, Callable[[MutableSequence[Any], int], Any]], bool] = _default_compare,
+    swap_elements: Callable[[MutableSequence[Any], int, int], None] = _default_swap_elements
 ) -> None:
     """
     Establish the heap property starting from a node in a heap sequence, progressing downwards.
@@ -125,11 +125,11 @@ def _heapify_down(
 
 
 def _heapify_up(
-        heap_sequence: MutableSequence[Any],
-        node_index: int,
-        get_value: Callable[[MutableSequence[Any], int], Any] = _default_get_value,
-        compare: Callable[[MutableSequence[Any], Any, Any, Callable[[MutableSequence[Any], int], Any]], bool] = _default_compare,
-        swap_elements: Callable[[MutableSequence[Any], int, int], None] = _default_swap_elements
+    heap_sequence: MutableSequence[Any],
+    node_index: int,
+    get_value: Callable[[MutableSequence[Any], int], Any] = _default_get_value,
+    compare: Callable[[MutableSequence[Any], Any, Any, Callable[[MutableSequence[Any], int], Any]], bool] = _default_compare,
+    swap_elements: Callable[[MutableSequence[Any], int, int], None] = _default_swap_elements
 ) -> None:
     """
     Establish the heap property starting from a node in a heap sequence, progressing upwards.
@@ -152,10 +152,10 @@ def _heapify_up(
 
 
 def make_heap(
-        heap_sequence: MutableSequence[Any],
-        get_value: Callable[[MutableSequence[Any], int], Any] = _default_get_value,
-        compare: Callable[[MutableSequence[Any], Any, Any, Callable[[MutableSequence[Any], int], Any]], bool] = _default_compare,
-        swap_elements: Callable[[MutableSequence[Any], int, int], Any] = _default_swap_elements
+    heap_sequence: MutableSequence[Any],
+    get_value: Callable[[MutableSequence[Any], int], Any] = _default_get_value,
+    compare: Callable[[MutableSequence[Any], Any, Any, Callable[[MutableSequence[Any], int], Any]], bool] = _default_compare,
+    swap_elements: Callable[[MutableSequence[Any], int, int], Any] = _default_swap_elements
 ) -> MutableSequence[Any]:
     """
     Mutate a sequence so that it fulfils the heap property.
@@ -181,11 +181,11 @@ def make_heap(
 
 
 def heappop(
-        heap_sequence: MutableSequence[Any],
-        set_root: Callable[[MutableSequence[Any]], Any] = _default_set_root,
-        get_value: Callable[[MutableSequence[Any], int], Any] = _default_get_value,
-        compare: Callable[[MutableSequence[Any], Any, Any, Callable[[MutableSequence[Any], int], Any]], bool] = _default_compare,
-        swap_elements: Callable[[MutableSequence[Any], int, int], Any] = _default_swap_elements
+    heap_sequence: MutableSequence[Any],
+    set_root: Callable[[MutableSequence[Any]], Any] = _default_set_root,
+    get_value: Callable[[MutableSequence[Any], int], Any] = _default_get_value,
+    compare: Callable[[MutableSequence[Any], Any, Any, Callable[[MutableSequence[Any], int], Any]], bool] = _default_compare,
+    swap_elements: Callable[[MutableSequence[Any], int, int], Any] = _default_swap_elements
 ) -> Any:
     """
     Extract the root element from a heap and maintain the heap invariant.
@@ -206,12 +206,12 @@ def heappop(
 
 
 def heappush(
-        element: Any,
-        heap_sequence: MutableSequence[Any],
-        push_element: Callable[[MutableSequence[Any], Any], Any] = _default_push_element,
-        get_value: Callable[[MutableSequence[Any], int], Any] = _default_get_value,
-        compare: Callable[[MutableSequence[Any], Any, Any, Callable[[MutableSequence[Any], int], Any]], bool] = _default_compare,
-        swap_elements: Callable[[MutableSequence[Any], int, int], None] = _default_swap_elements
+    element: Any,
+    heap_sequence: MutableSequence[Any],
+    push_element: Callable[[MutableSequence[Any], Any], Any] = _default_push_element,
+    get_value: Callable[[MutableSequence[Any], int], Any] = _default_get_value,
+    compare: Callable[[MutableSequence[Any], Any, Any, Callable[[MutableSequence[Any], int], Any]], bool] = _default_compare,
+    swap_elements: Callable[[MutableSequence[Any], int, int], None] = _default_swap_elements
 ) -> Any:
     """
     Push an element to a heap and maintain the heap invariant.
